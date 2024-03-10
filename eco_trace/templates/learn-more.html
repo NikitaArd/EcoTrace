@@ -6,7 +6,18 @@
     <h1 class="mb-4 text-4xl font-extrabold tracking-tigh text-stone-900">This is learn more page</h1>
 
 </section>
+
+<section class="my-20">
+    <video class="w-3/5 m-auto" controls>
+        <source src="{% static 'video/co2-impact.mp4' %}" type="video/mp4">
+        Looks like your browser does not support the video tag.
+    </video>
+
+    <p class="italic w-3/5 m-auto">*Video created by <a href="https://www.youtube.com/@PlanetNutshell" target="blank" class="underline">Planet Nutshell</a>.</p>
+</section>
+
 <section class="flex justify-between w-2/3 align-middle m-auto">
+    {% comment %} TODO add Breadcrumb to easy navigation {% endcomment %}
     <img src={% static 'img/co2-impact.svg' %} class="max-h-80 mr-32" />
     <article class="h-fit m-auto">
         <h1 class="text-3xl font-semibold pb-6 pl-3">Impact of CO<sub>2</sub> on our life</h1>
