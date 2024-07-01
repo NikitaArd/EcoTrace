@@ -4,14 +4,14 @@ import Plants from "../assets/Plants.svg";
 import Video from "../assets/video/co2-impact.mp4";
 
 import Footer from "../components/Footer";
-// import LearnMoreHeader from "../components/LearnMoreHeader";
+import LearnMoreHeader from "../components/LearnMoreHeader";
 import LearnMoreBlock from "../components/LearnMoreBlock";
 
 
 export default function LearnMore() {
   return (
     <>
-      {/* <LearnMoreHeader /> */}
+      <LearnMoreHeader />
 
       <section class="mb-20 mt-10">
         <video class="w-3/5 m-auto" controls>
