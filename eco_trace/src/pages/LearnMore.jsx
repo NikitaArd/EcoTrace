@@ -5,7 +5,7 @@ import Video from "../assets/video/co2-impact.mp4";
 
 import Footer from "../components/Footer";
 // import LearnMoreHeader from "../components/LearnMoreHeader";
-// import LearnMoreBlock from "../components/LearnMoreBlock";
+import LearnMoreBlock from "../components/LearnMoreBlock";
 
 
 export default function LearnMore() {
@@ -31,7 +31,7 @@ export default function LearnMore() {
           .
         </p>
       </section>
-{/* 
+
       <LearnMoreBlock>
         <img src={Co2Impact} class="max-h-80 mr-32" />
         <article class="h-fit m-auto">
@@ -83,7 +83,7 @@ export default function LearnMore() {
             <li class="my-1">Stop buying water in plastic</li>
           </ul>
         </article>
-      </LearnMoreBlock> */}
+      </LearnMoreBlock>
 
       <Footer />
     </>
