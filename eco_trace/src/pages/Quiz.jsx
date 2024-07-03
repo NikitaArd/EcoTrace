@@ -8,6 +8,8 @@ import QuizOption from "../components/QuizOption";
 import questions from "../quiz.js";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
@@ -17,10 +19,12 @@ export default function Quiz() {
 
   const questionAmount = questions.length;
 
+  const navigate = useNavigate();
+
   function submitQuestion() {
     if (questionAmount === currentQuestion.id) {
-      localStorage.setItem("total", total);
-      // TODO: Add redirection to total page
+      localStorage.setItem("total", total);s
+      navigate('/');
     }
 
 
