@@ -23,7 +23,7 @@ export default function Quiz() {
 
   function submitQuestion() {
     if (questionAmount === currentQuestion.id) {
-      localStorage.setItem("total", total);s
+      localStorage.setItem("total", total);
       navigate('/');
     }
 

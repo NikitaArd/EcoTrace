@@ -12,14 +12,14 @@ export default function Home() {
         </h1>
         <div class="m-16 justify-start px-4 flex">
           <div>
-            <a href="path to the quiz">
+            <Link to="quiz">
               <button
                 type="button"
                 class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-6 py-3 me-6 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               >
                 Start quiz !
               </button>
-            </a>
+            </Link>
           </div>
 
           <div>
