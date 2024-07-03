@@ -11,17 +11,25 @@ import { useState } from "react";
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
-  const questionAmount = questions.length;
   const [currentAnswer, setCurrentAnswer] = useState(-1);
   const [emptyOption, setEmptyOption] = useState(false);
+  const [total, setTotal] = useState(0);
 
-  let total = 0;
+  const questionAmount = questions.length;
 
   function submitQuestion() {
+    if (questionAmount === currentQuestion.id) {
+      localStorage.setItem("total", total);
+      // TODO: Add redirection to total page
+    }
+
+
     if (currentAnswer === -1) {
       setEmptyOption(true);
     } else {
-      total += currentAnswer;
+      setTotal(prevTotal => {
+        return prevTotal + currentAnswer;
+      })
 
       setCurrentQuestion(
         questions.filter(
