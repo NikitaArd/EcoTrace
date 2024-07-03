@@ -24,7 +24,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="#" class="hover:underline me-4 md:me-6">
+              <Link to="/quiz" class="hover:underline me-4 md:me-6">
                 Quiz
               </Link>
             </li>
