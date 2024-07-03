@@ -1,6 +1,6 @@
 import Bike from "../assets/Bike.svg";
 
-import { RadioGroup, Progress, Button } from "@chakra-ui/react";
+import { RadioGroup, Progress, Button, Radio } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 import QuizOption from "../components/QuizOption";
@@ -58,7 +58,7 @@ export default function Quiz() {
             {currentQuestion.options.map((option, id) => {
               return (
                 <QuizOption
-                  key={id}
+                  key={currentQuestion.question + option.text}
                   value={option.value}
                   setAnswer={setCurrentAnswer}
                 >
