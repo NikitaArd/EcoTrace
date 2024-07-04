@@ -4,6 +4,7 @@ import RootLayout from './layout/Root';
 
 import Home from "./pages/Home";
 import LearnMore from "./pages/LearnMore";
+import Quiz from "./pages/Quiz";
 
 
 const router = createBrowserRouter([
@@ -12,7 +13,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {path: '', element: <Home />},
-      {path: 'learn-more', element: <LearnMore />}
+      {path: 'learn-more', element: <LearnMore />},
+      {path: 'quiz', element: <Quiz />}
     ],
   }
 ])
