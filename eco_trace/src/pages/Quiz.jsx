@@ -1,7 +1,7 @@
-import Bike from "../assets/Bike.svg";
+import Plants from "../assets/Plants.svg";
 
 import { RadioGroup, Progress, Button, Radio } from "@chakra-ui/react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 
 import QuizOption from "../components/QuizOption";
 
@@ -9,7 +9,6 @@ import questions from "../quiz.js";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
@@ -24,16 +23,15 @@ export default function Quiz() {
   function submitQuestion() {
     if (questionAmount === currentQuestion.id) {
       localStorage.setItem("total", total);
-      navigate('/');
+      navigate("/");
     }
-
 
     if (currentAnswer === -1) {
       setEmptyOption(true);
     } else {
-      setTotal(prevTotal => {
+      setTotal((prevTotal) => {
         return prevTotal + currentAnswer;
-      })
+      });
 
       setCurrentQuestion(
         questions.filter(
@@ -47,7 +45,11 @@ export default function Quiz() {
 
   return (
     <div className="flex w-screen h-screen bg-transparent">
-      <section className="m-auto h-fit w-fit p-28 pt-12 border-2 border-stone-200 rounded-sm shadow-xl">
+      <section className="m-auto h-fit w-fit p-28 pt-12 border-2 relative border-stone-200 bg-stone-50 rounded-sm shadow-xl z-10">
+        <button onClick={() => navigate('/')}>
+          <ArrowBackIcon className="absolute top-8 left-8" color="gray.600" />
+        </button>
+
         <div className="mt-3 mb-20">
           <p className="my-2 font-semibold">
             {!emptyOption && `${currentQuestion.id} / ${questionAmount}`}
@@ -92,7 +94,7 @@ export default function Quiz() {
           Submit
         </Button>
       </section>
-      <img class="absolute max-h-56 ml-32 bottom-0 right-72" src={Bike} />
+      <img class="absolute max-h-56 ml-32 bottom-0 right-72 z-0" src={Plants} />
     </div>
   );
 }
