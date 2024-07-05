@@ -45,7 +45,7 @@ export default function Quiz() {
 
   return (
     <div className="flex w-screen h-screen bg-transparent">
-      <section className="m-auto h-fit w-fit p-28 pt-12 border-2 relative border-stone-200 bg-stone-50 rounded-sm shadow-xl z-10">
+      <section className="m-auto h-fit w-fit max-w-[50%] p-28 pt-12 border-2 relative border-stone-200 bg-stone-50 rounded-sm shadow-xl z-10">
         <button onClick={() => navigate('/')}>
           <ArrowBackIcon className="absolute top-8 left-8" color="gray.600" />
         </button>
