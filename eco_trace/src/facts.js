@@ -14,11 +14,11 @@ const facts = [
 function get_fact(score) {
     for (let i = 0; i < facts.length; i++) {
         if (score >= facts[i].range[0] && score <= facts[i].range[1]) {
-            return [facts[i].fact, facts[i].color];
+            return [facts[i].fact, facts[i].color, true];
         }
     }
 
-    return ["It looks no more facts for you, sorry", "#000000"];
+    return ["It looks no more facts for you, sorry...", "#000000", false];
 }
 
 export default get_fact;
