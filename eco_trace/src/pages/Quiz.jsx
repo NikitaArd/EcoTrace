@@ -22,7 +22,7 @@ export default function Quiz() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem("total")) {
+    if (parseInt(localStorage.getItem("total"))) {
       navigate("/total?passed=true");
     }
   });

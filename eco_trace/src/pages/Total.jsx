@@ -4,6 +4,8 @@ import { useMemo } from "react";
 
 import { useLocation } from "react-router";
 
+import { useNavigate } from "react-router";
+
 import get_fact from "../facts";
 
 function useQuery() {
@@ -19,6 +21,13 @@ export default function Total() {
   const query = useQuery();
 
   const passed = Boolean(query.get("passed"));
+
+  const navigate = useNavigate();
+
+  function repassQuiz() {
+    localStorage.setItem("total", 0);
+    navigate('/quiz');
+  }
 
   return (
     <div className="h-screen w-screen pt-64">
@@ -53,6 +62,7 @@ export default function Total() {
         <p>
           Do you want to provide upadated data about your life-style ? Come and
           do it
+          <button onClick={repassQuiz}>RePass</button>
         </p>
       )}
     </div>
