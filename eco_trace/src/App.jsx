@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import LearnMore from "./pages/LearnMore";
 import Quiz from "./pages/Quiz";
 import Total from "./pages/Total";
+import RootLayoutWithHomeButton from "./layout/RootWithHomeButton";
 
 
 const router = createBrowserRouter([
@@ -14,10 +15,22 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {path: '', element: <Home />},
-      {path: 'learn-more', element: <LearnMore />},
       {path: 'quiz', element: <Quiz />},
-      {path: 'total', element: <Total />}
     ],
+  },
+  {
+    path: '/total',
+    element: <RootLayoutWithHomeButton />,
+    children: [
+      {index: true, element: <Total />}
+    ]
+  },
+  {
+    path: '/learn-more',
+    element: <RootLayoutWithHomeButton />,
+    children: [
+      {index: true, element: <LearnMore />}
+    ]
   }
 ])
 
