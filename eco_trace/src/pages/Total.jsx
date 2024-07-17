@@ -6,7 +6,7 @@ import { useLocation } from "react-router";
 
 import get_fact from "../facts";
 
-function useQuery(){
+function useQuery() {
   const { search } = useLocation();
 
   return useMemo(() => new URLSearchParams(search), [search]);
@@ -18,10 +18,7 @@ export default function Total() {
 
   const query = useQuery();
 
-  const passed = Boolean(query.get('passed'));
-
-
-  // TODO: create a functionality that prevents user to do quiz again (only with additional question and agreement)
+  const passed = Boolean(query.get("passed"));
 
   return (
     <div className="h-screen w-screen pt-64">
@@ -36,10 +33,13 @@ export default function Total() {
             Did you know ?
           </h2>
 
-          <p className="w-1/3 m-auto text-xl text-center">
-            <span className="underline underline-offset-2">{total}</span> kg C2
-            <sub>2</sub> is {fact}
-          </p>
+          <div className="p-7 bg-white h-fit w-1/3 m-auto shadow-lg rounded-2xl -rotate-1">
+            <p className="m-auto text-xl text-center">
+              <span className="underline underline-offset-2">{total}</span> kg
+              C2
+              <sub>2</sub> is {fact}
+            </p>
+          </div>
         </>
       )}
 
@@ -49,7 +49,12 @@ export default function Total() {
         </h1>
       )}
 
-      {passed && <p>Do you want to provide upadated data about your life-style ? Come and do it</p>}
+      {passed && (
+        <p>
+          Do you want to provide upadated data about your life-style ? Come and
+          do it
+        </p>
+      )}
     </div>
   );
 }
