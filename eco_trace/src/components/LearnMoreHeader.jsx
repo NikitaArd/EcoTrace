@@ -1,7 +1,7 @@
 export default function LearnMoreHeader() {
     return (
-      <section class="h-fit py-16">
-        <h1 class="w-fit m-auto mb-4 text-5xl font-extrabold tracking-tigh text-stone-900">
+      <section className="h-fit py-16">
+        <h1 className="w-fit m-auto mb-4 text-5xl font-extrabold tracking-tigh text-stone-900">
           Learn more about{" "}
           <span class="text-red-600">
             CO<sub>2</sub>
@@ -9,9 +9,9 @@ export default function LearnMoreHeader() {
           emissions.
         </h1>
   
-        <blockquote class="w-fit m-auto mt-16 mb-4 text-xl italic font-semibold text-gray-600 dark:text-white">
+        <blockquote className="w-fit m-auto mt-16 mb-4 text-xl italic font-semibold text-gray-600 dark:text-white">
           <svg
-            class="w-4 h-4 text-gray-400 dark:text-gray-600 mb-2"
+            className="w-4 h-4 text-gray-400 dark:text-gray-600 mb-2"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -22,14 +22,14 @@ export default function LearnMoreHeader() {
           <p>"The creation of a thousand forests is in one acorn."</p>
         </blockquote>
   
-        <figcaption class="flex items-center justify-center mt-0 space-x-3 rtl:space-x-reverse">
+        <figcaption className="flex items-center justify-center mt-0 space-x-3 rtl:space-x-reverse">
           <img
-            class="w-6 h-6 rounded-full"
+            className="w-6 h-6 rounded-full"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg/1024px-Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg"
             alt="profile picture"
           />
-          <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-            <cite class="pe-3 font-medium text-gray-900 dark:text-white">
+          <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+            <cite className="pe-3 font-medium text-gray-900 dark:text-white">
               Ralph Waldo Emerson
             </cite>
           </div>

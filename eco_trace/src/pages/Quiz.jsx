@@ -1,4 +1,4 @@
-import Plants from "../assets/Plants.svg";
+// import Plants from "../assets/Plants.svg";
 
 import { RadioGroup, Progress, Button, Radio } from "@chakra-ui/react";
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
@@ -7,7 +7,7 @@ import QuizOption from "../components/QuizOption";
 
 import questions from "../quiz.js";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Quiz() {
@@ -20,10 +20,16 @@ export default function Quiz() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (parseInt(localStorage.getItem("total"))) {
+      navigate("/total?passed=true");
+    }
+  });
+
   function submitQuestion() {
     if (questionAmount === currentQuestion.id) {
       localStorage.setItem("total", total);
-      navigate("/");
+      navigate("/total");
     }
 
     if (currentAnswer === -1) {
@@ -45,8 +51,8 @@ export default function Quiz() {
 
   return (
     <div className="flex w-screen h-screen bg-transparent">
-      <section className="m-auto h-fit w-fit p-28 pt-12 border-2 relative border-stone-200 bg-stone-50 rounded-sm shadow-xl z-10">
-        <button onClick={() => navigate('/')}>
+      <section className="m-auto h-fit w-fit max-w-[50%] p-28 pt-12 border-2 relative border-stone-200 bg-stone-50 rounded-sm shadow-xl z-10">
+        <button onClick={() => navigate("/")}>
           <ArrowBackIcon className="absolute top-8 left-8" color="gray.600" />
         </button>
 
@@ -94,7 +100,7 @@ export default function Quiz() {
           Submit
         </Button>
       </section>
-      <img class="absolute max-h-56 ml-32 bottom-0 right-72 z-0" src={Plants} />
+      {/* <img class="absolute max-h-56 ml-32 bottom-0 right-72 z-0" src={Plants} /> */}
     </div>
   );
 }
