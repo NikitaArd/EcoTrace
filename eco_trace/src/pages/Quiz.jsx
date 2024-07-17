@@ -4,10 +4,11 @@ import { RadioGroup, Progress, Button, Radio } from "@chakra-ui/react";
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 
 import QuizOption from "../components/QuizOption";
+import Total from "./Total.jsx";
 
 import questions from "../quiz.js";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Quiz() {
@@ -19,6 +20,12 @@ export default function Quiz() {
   const questionAmount = questions.length;
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("total")) {
+      navigate("/total?passed=true");
+    }
+  });
 
   function submitQuestion() {
     if (questionAmount === currentQuestion.id) {
@@ -46,7 +53,7 @@ export default function Quiz() {
   return (
     <div className="flex w-screen h-screen bg-transparent">
       <section className="m-auto h-fit w-fit max-w-[50%] p-28 pt-12 border-2 relative border-stone-200 bg-stone-50 rounded-sm shadow-xl z-10">
-        <button onClick={() => navigate('/')}>
+        <button onClick={() => navigate("/")}>
           <ArrowBackIcon className="absolute top-8 left-8" color="gray.600" />
         </button>
 

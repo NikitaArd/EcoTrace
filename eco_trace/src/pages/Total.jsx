@@ -1,10 +1,27 @@
 import { Text } from "@chakra-ui/react";
 
+import { useMemo } from "react";
+
+import { useLocation } from "react-router";
+
 import get_fact from "../facts";
+
+function useQuery(){
+  const { search } = useLocation();
+
+  return useMemo(() => new URLSearchParams(search), [search]);
+}
 
 export default function Total() {
   const total = localStorage.getItem("total");
   const [fact, color, status] = get_fact(total);
+
+  const query = useQuery();
+
+  const passed = Boolean(query.get('passed'));
+
+
+  // TODO: create a functionality that prevents user to do quiz again (only with additional question and agreement)
 
   return (
     <div className="h-screen w-screen pt-64">
@@ -31,6 +48,8 @@ export default function Total() {
           {fact}
         </h1>
       )}
+
+      {passed && <p>Do you want to provide upadated data about your life-style ? Come and do it</p>}
     </div>
   );
 }
