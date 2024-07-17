@@ -1,4 +1,4 @@
-import Plants from "../assets/Plants.svg";
+// import Plants from "../assets/Plants.svg";
 
 import { RadioGroup, Progress, Button, Radio } from "@chakra-ui/react";
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
@@ -100,7 +100,7 @@ export default function Quiz() {
           Submit
         </Button>
       </section>
-      <img class="absolute max-h-56 ml-32 bottom-0 right-72 z-0" src={Plants} />
+      {/* <img class="absolute max-h-56 ml-32 bottom-0 right-72 z-0" src={Plants} /> */}
     </div>
   );
 }
