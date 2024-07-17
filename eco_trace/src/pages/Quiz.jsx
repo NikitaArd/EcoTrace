@@ -4,7 +4,6 @@ import { RadioGroup, Progress, Button, Radio } from "@chakra-ui/react";
 import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 
 import QuizOption from "../components/QuizOption";
-import Total from "./Total.jsx";
 
 import questions from "../quiz.js";
 

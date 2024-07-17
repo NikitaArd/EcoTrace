@@ -1,4 +1,5 @@
-import { Text } from "@chakra-ui/react";
+import { Text, Button, Icon } from "@chakra-ui/react";
+import { RepeatIcon } from "@chakra-ui/icons";
 
 import { useMemo } from "react";
 
@@ -26,11 +27,33 @@ export default function Total() {
 
   function repassQuiz() {
     localStorage.setItem("total", 0);
-    navigate('/quiz');
+    navigate("/quiz");
   }
 
   return (
-    <div className="h-screen w-screen pt-64">
+    <div className="h-screen w-screen">
+      {passed && (
+        <div className="w-full h-10 bg-green-800 mb-52 flex justify-center">
+          <p className="w-fit my-auto text-center text-white mx-4">
+            Did you change your life-style ? Checkout your current{" "}
+            <b>
+              CO<sub>2</sub>
+            </b>{" "}
+            emission !
+          </p>
+          <Button
+            size="xs"
+            className="my-auto"
+            colorScheme="green"
+            onClick={repassQuiz}
+          >
+            <Icon as={RepeatIcon} />
+          </Button>
+        </div>
+      )}
+
+      {!passed && <div className="pt-64"></div>}
+
       {status && (
         <>
           <h1 className="mb-4 text-center text-4xl font-extrabold tracking-tight leading-none text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
@@ -56,14 +79,6 @@ export default function Total() {
         <h1 className="mb-4 text-center text-4xl font-extrabold tracking-tight leading-none text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
           {fact}
         </h1>
-      )}
-
-      {passed && (
-        <p>
-          Do you want to provide upadated data about your life-style ? Come and
-          do it
-          <button onClick={repassQuiz}>RePass</button>
-        </p>
       )}
     </div>
   );
